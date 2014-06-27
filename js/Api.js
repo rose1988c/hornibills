@@ -26,41 +26,48 @@ function Api($scope, $http, $routeParams,$location, $anchorScroll,$timeout) {
         "description": "接口描述",
         "params": [
             {
-                "Name": "param_1_name",
+                "Name": "param_1",
                 "Required": "Y",
                 "Default": "",
                 "Type": "string",
-                "Description": "Description of the first parameter."
+                "Description": "参数1"
             },
             {
-                "Name": "userId",
+                "Name": "param_2",
                 "Required": "Y",
                 "Default": "",
                 "Type": "string",
-                "Description": "The userId parameter that is in the URI."
+                "Description": "参数2"
             }
         ],
         "response":[
             {
-                "Name": "param_1_name",
+                "Name": "code",
                 "Required": "Y",
                 "Default": "",
-                "Type": "string",
-                "Description": "Description of the first parameter."
+                "Type": "int",
+                "Description": "执行返回代码：0为正常执行，其他数值都为报错状态"
             },
             {
-                "Name": "userId",
+                "Name": "message",
                 "Required": "Y",
                 "Default": "",
                 "Type": "string",
-                "Description": "The userId parameter that is in the URI."
+                "Description": "执行返回消息：显示代码的执行结果信息"
+            },
+            {
+            	"Name": "data",
+            	"Required": "Y",
+            	"Default": "",
+            	"Type": "array",
+            	"Description": "执行返回数组：返回数组信息"
             }
         ],
-        "demo": "<?php \n\r var_dump(123);"
+        "demo": "## demo \n\r url: \n\r return: \n\r "
     };
 
     $scope.TYPES = [
-       "string", "int"
+       "string", "int", "array"
     ];
     $scope.METHODS = [
         "GET", "POST"
